@@ -1,12 +1,49 @@
 
-exports.min = function min (array) {
-  return 0;
+exports.min = function min(array) {
+    if (array == undefined|| 0 ||false){
+        return 0
+    } else {
+         let a = [0];
+    function compareNumeric(a, b) {
+  if (a < b) return -1;
+  if (a == b) return 0;
+  if (a > b) return  1;
+    }
+    a = array.sort(compareNumeric);
+    a = array[0];
+     return a;
+    }
 }
 
-exports.max = function max (array) {
-  return 0;
+exports.max = function max(array) {
+    if (array == undefined|| 0 ||false){
+        return 0
+    } else {
+        let a = [];
+    function compareNumeric(a, b) {
+  if (a > b) return -1;
+  if (a == b) return 0;
+  if (a < b) return 1;
+    }
+    a = array.sort(compareNumeric);
+    a = array[0];
+
+    return a;
+    }
+
 }
 
-exports.avg = function avg (array) {
-  return 0;
+exports.avg = function avg(array) {
+    if (array==NaN || undefined||false) {
+        return 0
+    } else {
+        sum = array.reduce(getResult,0);
+
+function getResult(sum, number) {
+
+    return sum + number;
+}
+
+return(sum/array.length);
+    }
 }
